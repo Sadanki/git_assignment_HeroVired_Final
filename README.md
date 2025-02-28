@@ -1,23 +1,25 @@
-# git_assignment_HeroVired_Final
-# 📌 **CalculatorPlus - Git Assignment**
+# 🎯 **Git Assignment - Hero Vired**  
 
-## 📖 **Overview**
-Welcome to the **CalculatorPlus** project! This Python application provides basic arithmetic operations such as addition, subtraction, multiplication, and division. Your task is to implement a new feature: **square root calculation**. 🚀
+Welcome to the **Git Assignment Repository**! 📌 This project covers **multiple Git and Python development tasks**, including **branch management, feature development, bug fixes, Git LFS, and pull request handling.** Let's dive in! 🎉  
 
-## 📂 **Repository Details**
-- Repository Name: `git_assignment_HeroVired_Final`
-- Primary Branch: `main`
-- Development Branch: `dev`
+## 📂 **Repository Name:** `git_assignment_HeroVired`  
+
+## 📌 **Table of Contents**  
+- 🔹 [Q1: CalculatorPlus - Square Root Feature](#-q1-calculatorplus---square-root-feature)  
+- 🔹 [Q2: Git LFS - Handling Large Files](#-q2-git-lfs---handling-large-files)  
+- 🔹 [Q3: Geometry Calculator - Area Calculations](#-q3-geometry-calculator---area-calculations)  
+- 🔹 [🚀 Workflow Summary](#-workflow-summary)  
 
 ---
 
-## ✅ **Q1: Implementing Square Root Feature**
-### 🔨 **Steps to Follow**
+## 🧮 **Q1: CalculatorPlus - Square Root Feature**  
 
-### 📌 **Step 1: Create a Repository and Branch**
-1. Create a repository named **git_assignment_HeroVired_Final**.
-2. Create a branch named `dev` from `main`.
-3. Add the following Python code:
+### **📌 Task Overview**  
+We are enhancing the `CalculatorPlus` application by adding support for **square root calculations** and fixing a **division bug**.
+
+### **📂 Steps to Follow**  
+1️⃣ **Create a GitHub repository** named `git_assignment_HeroVired`.  
+2️⃣ **Create a `dev` branch** and add the following initial code:  
 
 ```python
 import math
@@ -25,128 +27,99 @@ import math
 class Calculator:
     def add(self, a, b):
         return a + b
-    
+
     def subtract(self, a, b):
         return a - b
-    
+
     def multiply(self, a, b):
         return a * b
-    
+
     def divide(self, a, b):
         return a / b
-    
-    # TODO: Implement the square root function
+
+    # TODO: Implement the following function to calculate the square root
     # def square_root(self, x):
     #     return math.sqrt(x)
 ```
 
-4. Uncomment and implement the `square_root` function.
+3️⃣ **Implement the `square_root()` method** by uncommenting the function.  
+4️⃣ **Create a branch `feature/sqrt`** and add the square root functionality.  
+5️⃣ **Fix the `divide()` method** to prevent division by zero:  
 
 ```python
-    def square_root(self, x):
-        return math.sqrt(x)
+def divide(self, a, b):
+    if b == 0:
+        raise ValueError("Cannot divide by zero.")
+    return a / b
 ```
 
-5. Run the following test cases:
-
-```python
-if __name__ == "__main__":
-    calculator = Calculator()
-    print(f"Square root of 25 = {calculator.square_root(25)}")
-```
-
-### 📌 **Step 2: Merge and Release Version 1**
-- Merge the `dev` branch into `main`.
-- Create a **Version 1 Release**.
-
-### 📌 **Step 3: Collaborate & Fix Bugs**
-- Add a collaborator to the repository.
-- Create a new branch `feature/sqrt` from `main`.
-- Uncomment the square root function code.
-
-### 📌 **Step 4: Bug Fixing in `divide` Function**
-- Switch to `dev` branch and fix the divide function:
-
-```python
-    def divide(self, a, b):
-        if b == 0:
-            raise ValueError("Cannot divide by zero.")
-        return a / b
-```
-
-- Merge the fix into `feature/sqrt`.
-- Request a **code review** from a team member.
-- Merge `feature/sqrt` into `dev` and finalize **Version 2 Release**.
+6️⃣ **Push changes, create a pull request, and merge into `dev`**  
+7️⃣ **Test thoroughly in `dev` before merging to `main`**  
+8️⃣ **Create a `Version 2` release 🎉**  
 
 ---
 
-## ✅ **Q2: Handling Large Binary Files with Git LFS**
-For handling **large binary files**, follow these steps:
+## 📁 **Q2: Git LFS - Handling Large Files**  
 
-### 📌 **Step 1: Initialize Git LFS**
-```bash
-git lfs install
-git checkout -b lfs
-git lfs track "*.mp4"
-```
+### **📌 Task Overview**  
+We need to handle **large binary files** efficiently using **Git LFS (Large File Storage)**.
 
-### 📌 **Step 2: Add Large Files**
-- Upload any **large file (200MB+)**
-```bash
-git add big_file.mp4
-git commit -m "Added large file to Git LFS"
-git push origin lfs
-```
-
-### 📌 **Step 3: Clone & Verify**
-- Clone the repository on another machine:
-```bash
-git clone <repo_link>
-```
-- Verify the large files are correctly downloaded.
+### **📂 Steps to Follow**  
+1️⃣ **Create a branch `lfs`** in the repository.  
+2️⃣ **Install Git LFS** (if not installed):  
+   ```sh
+   git lfs install
+   ```
+3️⃣ **Track large files**:  
+   ```sh
+   git lfs track "*.zip" "*.mp4" "*.psd"
+   ```
+4️⃣ **Upload a file over `200MB`** and push changes.  
+5️⃣ **Clone the repo on another machine to verify that LFS downloads files correctly.**  
 
 ---
 
-## ✅ **Q3: Geometry Calculator with Git Stash**
+## 📏 **Q3: Geometry Calculator - Area Calculations**  
 
-### 📌 **Step 1: Create a New Branch**
-```bash
-git checkout -b geometry-calculator
-```
+### **📌 Task Overview**  
+We're building a **Geometry Calculator** that calculates the **area of a circle and rectangle**. The challenge is to use `git stash` to manage multiple features effectively.  
 
-### 📌 **Step 2: Implement Geometry Functions**
-```python
-import math
+### **📂 Steps to Follow**  
+1️⃣ **Create a new branch `geometry-calculator`**.  
+2️⃣ **Create feature branches** for different area calculations:  
+   - `feature/circle-area`  
+   - `feature/rectangle-area`  
+3️⃣ **Use `git stash` to save incomplete changes before switching branches**:  
+   ```sh
+   git stash
+   git checkout feature/rectangle-area
+   ```
+4️⃣ **Retrieve stashed changes when switching back**:  
+   ```sh
+   git stash pop
+   ```
+5️⃣ **Complete both features and commit them separately.**  
+6️⃣ **Create pull requests (PRs) to `dev` branch.**  
+7️⃣ **After review & approval, merge into `main` and release `Version 3` 🎉**  
 
-class GeometryCalculator:
-    def calculate_circle_area(self, radius):
-        return math.pi * radius ** 2
+---
 
-    def calculate_rectangle_area(self, length, width):
-        return length * width
-```
+## 🚀 **Workflow Summary**  
 
-### 📌 **Step 3: Stash Changes**
-```bash
-git stash
-```
+| Task 🏆                | Branch Name 🌿          | Action 🚀 |
+|----------------------|----------------------|---------|
+| 📌 **Initialize Repo** | `main` | Create Repo |
+| 🔀 **Create Dev Branch** | `dev` | Work on `dev` |
+| 🧮 **CalculatorPlus** | `feature/sqrt` | Implement `sqrt()` |
+| 🐞 **Fix Division Bug** | `feature/sqrt` | Fix `divide()` |
+| 🔁 **Merge Features** | `dev → main` | Version 2 Release |
+| 🗂️ **Git LFS Setup** | `lfs` | Track Large Files |
+| 🔄 **Geometry Calculator** | `geometry-calculator` | Calculate Areas |
+| 🎯 **Final PRs & Merges** | `dev → main` | Version 3 Release |
 
-### 📌 **Step 4: Work on Another Feature**
-```bash
-git checkout -b feature/rectangle-area
-```
+---
 
-- Retrieve stashed changes:
-```bash
-git stash pop
-```
+## 🎉 **Congratulations! You're Done!**  
+This repository is now fully functional with **multiple features, fixes, and Git best practices!** 🎯💡  
 
-- Finalize implementations, commit, and push changes.
-
-### 📌 **Step 5: Merge Features**
-- Open **Pull Requests** to `dev` branch.
-- Get **Code Review & Approval**.
-- Merge branches into `main` and finalize the **Version Release**.
-
-
-
+**Happy Coding! 🚀🔥**
