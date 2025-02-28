@@ -65,16 +65,32 @@ def divide(self, a, b):
 We need to handle **large binary files** efficiently using **Git LFS (Large File Storage)**.
 
 ### **📂 Steps to Follow**  
-1️⃣ **Create a branch `lfs`** in the repository.  
+1️⃣ **Create a branch `lfs`** in the repository. 
+
+![image](https://github.com/user-attachments/assets/aeca46a7-0fa8-40c7-b87e-abb47819664c)
+
+
 2️⃣ **Install Git LFS** (if not installed):  
    ```sh
    git lfs install
    ```
+![image](https://github.com/user-attachments/assets/ada3426e-6577-4c4b-9396-b1385845066b)
+
 3️⃣ **Track large files**:  
    ```sh
    git lfs track "*.zip" "*.mp4" "*.psd"
    ```
+![image](https://github.com/user-attachments/assets/1af7500c-c104-43e5-bfcb-efac095a4da7)
+
 4️⃣ **Upload a file over `200MB`** and push changes.  
+![image](https://github.com/user-attachments/assets/ac10453f-dd2b-47e0-add0-a9b9f9cca046)
+
+![image](https://github.com/user-attachments/assets/2860f17f-20c7-48d6-9f58-ace17401e88f)
+
+![image](https://github.com/user-attachments/assets/e81a7db3-3718-434a-9e97-79a937daad97)
+
+
+
 5️⃣ **Clone the repo on another machine to verify that LFS downloads files correctly.**  
 
 ---
