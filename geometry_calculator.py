@@ -15,8 +15,8 @@ if __name__ == "__main__":
     calculator = GeometryCalculator()
 
     # Circle Area Calculation
-    radius = 5
-    print(f"The area of the circle with radius {radius} = {calculator.calculate_circle_area(radius):.2f}")
+    #radius = 5
+    #print(f"The area of the circle with radius {radius} = {calculator.calculate_circle_area(radius):.2f}")
 
     # Rectangle Area Calculation
     length = 10
